@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Ecomerce</title>
+  </head>
+  <body>
+    <div class="background">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <header>
+      <figure>LOGO</figure>
+      <nav>
+        <ul>
+          <li><a href="#products">All Products</a></li>
+        </ul>
+      </nav>
+      <nav>
+        <ul>
+          <li>
+            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section class="welcome">
+      <div>
+        <h1>Explore Our Product Categories</h1>
+        <p>
+          Discover a wide range of product categories tailored to suit your
+          needs and preferences
+        </p>
+      </div>
+      <figure id="welcome-img">
+        <img src="public/imgs/jordan1.png" alt="Jordan 1" />
+      </figure>
+    </section>
+    <section class="sticky_parent">
+      <div class="sticky">
+        <div class="scroll_section">
+          <section class="section">
+            <div>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Impedit distinctio harum saepe doloremque beatae quaerat
+                excepturi eveniet obcaecati eos magnam quasi quae, ab maxime
+                autem corporis vitae! Alias, nemo expedita.
+              </p>
+            </div>
+            <img
+              src="https://images.pexels.com/photos/16789122/pexels-photo-16789122/free-photo-of-hombre-gente-deporte-prisa.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt=""
+            />
+          </section>
+          <section class="section">
+            <div>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Impedit distinctio harum saepe doloremque beatae quaerat
+                excepturi eveniet obcaecati eos magnam quasi quae, ab maxime
+                autem corporis vitae! Alias, nemo expedita.
+              </p>
+            </div>
+            <img
+              src="https://images.pexels.com/photos/1156684/pexels-photo-1156684.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt=""
+            />
+          </section>
+          <section class="section">
+            <div>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Impedit distinctio harum saepe doloremque beatae quaerat
+                excepturi eveniet obcaecati eos magnam quasi quae, ab maxime
+                autem corporis vitae! Alias, nemo expedita.
+              </p>
+            </div>
+            <img
+              src="https://images.pexels.com/photos/2528118/pexels-photo-2528118.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt=""
+            />
+          </section>
+        </div>
+      </div>
+    </section>
+    <main id="products">
+      <header>
+        <div>
+          <input type="text" id="search" placeholder="Smartphones..." />
+          <span><i class="fa-solid fa-magnifying-glass"></i></span>
+        </div>
+        <div>
+          <section>
+            <span>Min Price - </span><span id="minPriceValue"></span> <br>
+            <input type="range" id="minPrice" min="0" max="1000" value="0" />
+          </section>
+          <span>Category</span>
+          <select name="" id="category">
+            <option value="all">All</option>
+            <option value="home-decoration">Home decoration</option>
+            <option value="laptops">Laptops</option>
+            <option value="smartphones">Smartphones</option>
+            <option value="fragrances">Fragrances</option>
+            <option value="skincare">Skincare</option>
+            <option value="groceries">Groceries</option>
+          </select>
+        </div>
+      </header>
+      <section id="product-container"></section>
+    </main>
+    <script src="./scripts/index.js"></script>
+    <script
+      src="https://kit.fontawesome.com/df1e0c481c.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
