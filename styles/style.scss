@@ -241,20 +241,129 @@ header {
   & nav:nth-child(3) {
     display: flex;
     justify-content: end;
-    a {
-      background-color: #ffca1faa;
-      padding: 10px;
+    button {
+      border: none;
+      outline: none;
+      background-color: #ffca1f;
     }
   }
   ul {
     display: flex;
     gap: 20px;
 
-    a {
+    a,
+    button#cart-btn {
       color: $text-color;
-      padding: 5px 10px;
+      padding: 7.5px 10px;
       font-size: 17.5px;
       border-radius: 2.5px;
+      cursor: pointer;
+    }
+    button#cart-btn {
+      position: fixed;
+      top: 2.25%;
+      right: 1.25%;
+      z-index: 100;
+      transition: all 100ms;
+      &:hover {
+        color: #fff;
+        background-color: #131211cc;
+        backdrop-filter: blur(50px);
+      }
+      &.active {
+        color: #fff;
+        background-color: transparent;
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+    div#cart {
+      border-radius: 2.5px;
+      position: fixed;
+      right: 1.25%;
+      top: 2.25%;
+      width: 300px;
+      bottom: 2.25%;
+      z-index: 99;
+      background-color: #131211aa;
+      backdrop-filter: blur(50px);
+      overflow-y: auto;
+      clip-path: circle(0% at 100% 0%);
+      transition: all 250ms ease-in-out;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      &.active {
+        clip-path: circle(142% at 100% 0%);
+      }
+
+      div#cart-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 225px));
+        justify-content: center;
+        padding: 25px 0;
+        gap: 25px;
+
+        div.cart-item {
+          border-radius: 5px;
+          background-color: #badae6aa;
+          padding: 15px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          h2 {
+            font-size: 15px;
+            font-weight: 500;
+          }
+          span {
+            font-size: 14px;
+          }
+          img {
+            object-fit: cover;
+            max-width: 250px;
+            max-height: 150px;
+          }
+          section {
+            display: flex;
+            justify-content: space-between;
+            button {
+              background-color: #131211aa;
+              padding: 5px 10px;
+              border-radius: 5px;
+              color: #badae6;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      hr {
+        background-color: #badae6;
+        width: 90%;
+        margin: 15px auto;
+        margin-bottom: 25px;
+      }
+      p#total{
+        background-color: #badae6;
+        width: 50%; 
+        text-align: center;
+        padding: 5px 10px;
+        border-radius: 50px;
+        margin: 15px auto;
+      }
+      button#buy-btn{
+        padding: 5px 10px;
+        font-size: 20px;
+        margin: auto;
+        width: fit-content;
+        border-radius: 2.5px;
+        cursor: pointer;
+      }
     }
   }
 }
@@ -352,6 +461,7 @@ header {
   position: absolute;
   top: 0;
   height: 100%;
+  min-width: 400svw;
   width: fit-content;
   will-change: transform;
   display: flex;
@@ -362,7 +472,8 @@ header {
   section {
     display: flex;
     align-items: center;
-    gap: 100px;
+    justify-content: space-around;
+    gap: 50px;
     width: 100svw;
     margin: 0 100px;
     padding: 150px;
@@ -395,6 +506,7 @@ main {
     display: flex;
     justify-content: center;
     border-top: 1px dashed $accent-color;
+    padding: 30px;
     gap: 50px;
     & div:first-child {
       position: relative;
@@ -449,12 +561,21 @@ main {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      cursor: pointer;
       gap: 10px;
       img {
         object-fit: cover;
         max-width: 300px;
         max-height: 150px;
+      }
+      button{
+        width: fit-content;
+        padding: 5px 10px;
+        font-size: 20px;
+        background-color: #ffca1faa;
+        outline: none;
+        border: none;
+        border-radius: 2.5px;
+        cursor: pointer;
       }
     }
   }

@@ -34,7 +34,17 @@
       <nav>
         <ul>
           <li>
-            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            <button id="cart-btn">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </button>
+          </li>
+          <li>
+            <div id="cart">
+              <div id="cart-list"></div>
+              <hr>
+              <p id="total"></p>
+              <button id="buy-btn">Buy</button>
+            </div>
           </li>
         </ul>
       </nav>
@@ -57,10 +67,10 @@
           <section class="section">
             <div>
               <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Impedit distinctio harum saepe doloremque beatae quaerat
-                excepturi eveniet obcaecati eos magnam quasi quae, ab maxime
-                autem corporis vitae! Alias, nemo expedita.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. In est
+                similique ea maxime eaque incidunt assumenda dolores? Odio,
+                illum! Quidem fuga facere eaque impedit quo exercitationem. Et
+                sapiente suscipit facere?
               </p>
             </div>
             <img
@@ -107,7 +117,7 @@
         </div>
         <div>
           <section>
-            <span>Min Price - </span><span id="minPriceValue"></span> <br>
+            <span>Min Price - </span><span id="minPriceValue"></span> <br />
             <input type="range" id="minPrice" min="0" max="1000" value="0" />
           </section>
           <span>Category</span>
@@ -125,6 +135,7 @@
       <section id="product-container"></section>
     </main>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/cart.js"></script>
     <script
       src="https://kit.fontawesome.com/df1e0c481c.js"
       crossorigin="anonymous"
