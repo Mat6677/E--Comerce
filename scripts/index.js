@@ -93,13 +93,13 @@ const addToCart = (product) => {
   uploadCart();
   showProducts();
   Swal.fire({
-    position:"top",
-    icon:"info",
-    title:"Product added",
+    position: "top",
+    icon: "info",
+    title: "Product added",
     showConfirmButton: false,
     timer: 1000,
-    width:"25%"
-  })
+    width: "25%",
+  });
 };
 // Funcion para aumentar la cantidad de un elemento en el carrito
 const plus = (id) => {
@@ -133,9 +133,24 @@ const removeFromCart = (product) => {
   localStorage.setItem("cart", newCart);
   cart = JSON.parse(localStorage.getItem("cart"));
 
-  // Se ponen los nuevos items en el carrito
-  uploadCart();
-  showProducts();
+  Swal.fire({
+    title: "Are you sure about delete this product?",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonText: "Yes, i'm sure",
+    cancelButtonText: "No, cancel",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // Se ponen los nuevos items en el carrito
+      uploadCart();
+      showProducts();
+      Swal.fire({
+        title: "Removed!",
+        icon: "Success",
+        text: "Product removed",
+      });
+    }
+  });
 };
 
 // Funcion para limpiar el carrito
