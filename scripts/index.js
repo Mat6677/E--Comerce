@@ -15,6 +15,13 @@ cartBtn.addEventListener("click", () => {
 // Escucha del click para comprar
 buyBtn.addEventListener("click", () => {
   clearCart();
+  Swal.fire({
+    position: "center",
+    icon: "success",
+    title: "Purchase Made",
+    showConfirmButton: false,
+    timer: 1500,
+  });
 });
 
 // Funcion para catualizar el precio total
@@ -85,6 +92,14 @@ const addToCart = (product) => {
   // Se ponen los nuevos items en el carrito
   uploadCart();
   showProducts();
+  Swal.fire({
+    position:"top",
+    icon:"info",
+    title:"Product added",
+    showConfirmButton: false,
+    timer: 1000,
+    width:"25%"
+  })
 };
 // Funcion para aumentar la cantidad de un elemento en el carrito
 const plus = (id) => {
